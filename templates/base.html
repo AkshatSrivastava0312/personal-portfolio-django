@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Akshat Srivastava ||  {% block page_title %} {% endblock %}</title>
+</head>
+<body>
+
+        {% block navbar %}
+        
+        {% endblock %}
+
+        {% block home_hero_section %}
+        
+        {% endblock %}
+
+
+      {% block home_gallery %}
+
+      {% endblock %}
+
+      {% block about_hero_section %}
+        
+      {% endblock %}
+
+      {% block projects_hero_section %}
+        
+      {% endblock %}
+
+      {% block contact_hero_section %}
+        
+      {% endblock %}
+
+      {% block page_404 %}
+        
+      {% endblock %}
+
+
+    <!-- Footer -->
+
+    <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <span class="ml-3 text-xl">Akshat Srivastava</span>
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Akshat Srivastava
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a href="{% block linkedin_link %} {% endblock %}" class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              {% load static %}
+              <a href="{% block github_link %} {% endblock %}"><img src="{% static 'github.svg' %}" alt="github" style="width: 20px; height: 20px; "></a>
+            </a>
+          </span>
+        </div>
+      </footer>
+
+    <!-- Footer Ends -->
+
+</body>
+<!-- Google Recapcha -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</html>

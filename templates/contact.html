@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Contact
+{% endblock %}
+
+{% block linkedin_link %}{{social_data.linkedinLink}}{% endblock %}
+
+{% block github_link %}{{social_data.githubLink}}{% endblock %}
+
+{% block navbar %}
+    
+<!-- Navbar -->
+
+<header class="text-gray-600 body-font">
+
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <span class="ml-3 text-xl">Akshat Srivastava</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+      <a class="mr-5 hover:text-gray-900" href="/about">About Me</a>
+      <a class="mr-5 hover:text-gray-900" href="/projects">My Projects</a>
+      <a class="mr-5 hover:text-gray-900" style="pointer-events: none;cursor: default;color:blue;">Contact Me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Navbar Ends -->
+
+{% endblock %}
+
+{% block contact_hero_section %}
+
+<!-- Contact Hero Section -->
+
+    <section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Form</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please fill out the form below to contact me</p>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <form action="/contact/" method="POST" id="contactForm">
+        {% csrf_token %}
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 w-1/2">
+            <div class="relative">
+                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            </div>
+            </div>
+            <div class="p-2 w-1/2">
+            <div class="relative">
+                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            </div>
+            </div>
+            <div class="p-2 w-full">
+                <div class="relative">
+                    <label for="subject" class="leading-7 text-sm text-gray-600">Subject</label>
+                    <input type="text" id="subject" name="subject" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                </div>
+                </div>
+            <div class="p-2 w-full">
+            <div class="relative">
+                <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" required></textarea>
+            </div>
+            </div>
+            <div class="p-2 w-full">
+                  <center><div class="g-recaptcha" data-sitekey="6Le-LdoaAAAAAIKSgDP5uEMTq3Q9qSKty6Dq4zgY"></div></center>
+            </div>
+            <div class="p-2 w-full">
+            <button type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+            </div>
+          </div>
+          {% if post %}
+          <div class="text-center" style="margin-top: 10px;">
+            <span class="text-center" style="color:rgb(74, 150, 12)">Thanks for your time. Your data is posted. I will surely get back to you.</span>
+          </div>
+            {% endif %}
+          {% if notPost %}
+          <div class="text-center" style="margin-top: 10px;">
+            <span style="color:red">Please Complete Captcha To Post Your Data!</span>
+          </div>
+            {% endif %}          
+        </form>
+        </div>
+    </div>
+    </section>
+
+<!-- Contact Hero Section Ends -->
+
+{% endblock %}

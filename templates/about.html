@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  About
+{% endblock %}
+
+{% block linkedin_link %}{{social_data.linkedinLink}}{% endblock %}
+
+{% block github_link %}{{social_data.githubLink}}{% endblock %}
+
+{% block navbar %}
+    
+<!-- Navbar -->
+
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <span class="ml-3 text-xl">Akshat Srivastava</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+      <a class="mr-5 hover:text-gray-900" style="pointer-events: none;cursor: default;color:blue;">About Me</a>
+      <a class="mr-5 hover:text-gray-900" href="/projects">My Projects</a>
+      <a class="mr-5 hover:text-gray-900" href="/contact">Contact Me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Navbar Ends -->
+
+{% endblock %}
+
+{% block about_hero_section %}
+
+<!-- About Hero Section -->
+
+    <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+        <img alt="feature" class="object-cover object-center h-full w-full" src="/media/{{image.imageUrl}}">
+        </div>
+        <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
+        <div class="flex flex-col mb-10 lg:items-start items-center">
+   
+            <div class="flex-grow">
+            <h2 class="text-center text-gray-900 text-lg title-font font-medium mb-3">A Small Gist About Me</h2>
+            <p style="font-style: oblique; letter-spacing: 2px; color:#8c8282;">{{text.aboutText | safe | linebreaks}}</p>
+            <a class="inline-flex mx-2 mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" href="/media/{{cv.attachement}}">Get my CV
+            </a>
+            <a class="inline-flex mx-2 mt-16 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg" href="/contact">Contact Me
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+<!-- About Hero Section Ends -->
+
+{% endblock %}

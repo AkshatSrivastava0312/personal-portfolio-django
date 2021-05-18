@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Page Not Found
+{% endblock %}
+
+{% block linkedin_link %}{{social_data.linkedinLink}}{% endblock %}
+
+{% block github_link %}{{social_data.githubLink}}{% endblock %}
+
+{% block navbar %}
+    
+<!-- Navbar -->
+
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <span class="ml-3 text-xl">Akshat Srivastava</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+      <a class="mr-5 hover:text-gray-900" href="/about">About Me</a>
+      <a class="mr-5 hover:text-gray-900" href="/projects">My Projects</a>
+      <a class="mr-5 hover:text-gray-900" href="/contact">Contact Me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Navbar Ends -->
+
+{% endblock %}
+
+{% block page_404 %}
+
+    <section class="text-gray-600 body-font" style="margin-left: 5%;">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-full md:w-full">
+            <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+            <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+            </div>
+            <div class="flex-grow">
+                <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Error 404</h2>
+                <p class="leading-relaxed text-base">The page you are requesting is either removed or disabled by the Admin. Plese check your URL and load this page again. If the problem persists, try to contact the Admin.</p>
+                <a href="/" class="inline-flex mx-2 mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Go Back To Home                    
+                </a>
+                <a href="/contact" class="inline-flex mx-2 mt-16 text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg">Contact Admin                    
+                </a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Projects 
+{% endblock %}
+
+{% block linkedin_link %}{{social_data.linkedinLink}}{% endblock %}
+
+{% block github_link %}{{social_data.githubLink}}{% endblock %}
+
+{% block navbar %}
+    
+<!-- Navbar -->
+
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a href="/" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <span class="ml-3 text-xl">Akshat Srivastava</span>
+    </a>
+    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+      <a class="mr-5 hover:text-gray-900" href="/">Home</a>
+      <a class="mr-5 hover:text-gray-900" href="/about">About Me</a>
+      <a class="mr-5 hover:text-gray-900" style="pointer-events: none;cursor: default;color:blue;">My Projects</a>
+      <a class="mr-5 hover:text-gray-900" href="/contact">Contact Me</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Navbar Ends -->
+
+{% endblock %}
+
+{% block projects_hero_section %}
+
+<!--  Projects Hero Section -->
+
+    <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">List Of My Projects</h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Projects showcases the level of competancy of an indivisual. Here are the list of all my top projects</p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+           
+           {% for project_item in project %}
+            <div class="xl:w-1/3 md:w-1/2 p-4">
+                <div class="border border-gray-200 p-6 rounded-lg">
+                <h2 class="text-center text-lg text-gray-900 font-medium title-font mb-2">{{project_item.projectTitle}}</h2>
+                <p class="leading-relaxed text-base">{{project_item.projectDescription}}</p>
+                <a href="{{project_item.projectUrl}}" class="py-3 inline-flex items-center bg-red-100 border-0 px-3 focus:outline-none hover:bg-red-200 rounded text-base mt-4 md:mt-0" style="margin-top: 5%; display: flex; justify-content: center;">Link to this project
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+            </div>
+          {% endfor %}
+
+        </div>
+        <center><a href="{{social_data.githubLink}}" class="inline-flex mx-2 mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Find all my projects on GitHub</a></center>
+    </div>
+    </section>
+
+<!-- Projects Hero Section Ends -->
+
+{% endblock %}
