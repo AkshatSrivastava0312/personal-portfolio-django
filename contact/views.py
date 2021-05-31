@@ -16,7 +16,7 @@ def show(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         clientKey = request.POST.get('g-recaptcha-response')
-        secretKey = '6Le-LdoaAAAAAD_8DdKg-T9cFjXcNtWjR-4yBInG'
+        secretKey = 'Your Google Recaptcha Here Seccret Server Key Here'
         captchaData = {'secret':secretKey,'response':clientKey}
         request_google = requests.post('https://www.google.com/recaptcha/api/siteverify',data=captchaData)
         response_google = json.loads(request_google.text)
